@@ -16,8 +16,11 @@ const carSchema = new Schema({
   doors: { type: Number, required: true },
   rental: { type: Boolean, required: true },
   rentalPrice: { type: String },
+  rentalTimeIn: { type: String },
+  rentalTimeOut: { type: String },
   rentalDateIn: { type: String },
   rentalDateOut: { type: String },
+  rentalDays: { type: String },
   rentedBy: { type: String },
   booked: { type: Boolean },
 });

@@ -144,6 +144,8 @@ app.post("/cars", (req, res) => {
     description,
     image,
     rental,
+    rentalTimeIn,
+    rentalTimeOut,
     rentalDateIn,
     rentalDateOut,
     rentalPrice,
@@ -162,6 +164,8 @@ app.post("/cars", (req, res) => {
       images: image,
       fuel,
       rental,
+      rentalTimeIn,
+      rentalTimeOut,
       rentalDateIn,
       rentalDateOut,
       rentalPrice,
@@ -190,6 +194,8 @@ app.put("/cars/:id", async (req, res) => {
     image,
     fuel,
     rental,
+    rentalTimeIn,
+    rentalTimeOut,
     rentalDateIn,
     rentalDateOut,
     rentalPrice,
@@ -225,6 +231,8 @@ app.put("/cars/:id", async (req, res) => {
         description,
         fuel,
         rental,
+        rentalTimeIn,
+        rentalTimeOut,
         rentalDateIn,
         rentalDateOut,
         rentalPrice,
@@ -300,11 +308,21 @@ app.put("/cars/:id/rent", async (req, res) => {
       if (!car) {
         return res.status(404).json({ message: "Car not found" });
       }
-      if (car.booked) {
+      if (
+        car.booked &&
+        car.rentalDateIn &&
+        car.rentalDateOut &&
+        req.body.rentalDays &&
+        req.body.rentalPrice
+      ) {
         return res.status(400).json({ message: "Car is already booked" });
       }
       car.booked = true;
       car.rentedBy = userData.id;
+      car.rentalDateIn = req.body.rentalDateIn;
+      car.rentalDateOut = req.body.rentalDateOut;
+      car.rentalDays = req.body.rentalDays;
+      car.rentalPrice = req.body.rentalPrice; // Make sure to set rentalPrice too
       await car.save();
       res.json({ message: "Car successfully booked" });
     } catch (error) {
@@ -330,6 +348,8 @@ app.put("/cars/:id/rent/cancel", async (req, res) => {
       }
       car.booked = false;
       car.rentedBy = null;
+      car.rentalDateIn = null;
+      car.rentalDateOut = null;
       await car.save();
       res.json({ message: "Car rent successfully canceled" });
     } catch (error) {

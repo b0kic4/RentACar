@@ -20,8 +20,8 @@ function EditCarPage() {
     fuel: "",
     rental: "",
     rentalPrice: "",
-    rentalDateIn: "",
-    rentalDateOut: "",
+    rentalTimeIn: "",
+    rentalTimeOut: "",
     booked: "",
   });
   const [formData, setFormData] = useState({});
@@ -243,19 +243,19 @@ function EditCarPage() {
           onChange={handleInputChange}
           className="w-full p-2 border rounded-lg mb-4"
         />
-        <label className="block mb-2 font-semibold">Rental Date In</label>
+        <label className="block mb-2 font-semibold">Rental Time In</label>
         <input
           type="date"
           name="rentalDateIn"
-          value={formData.rentalDateIn || ""}
+          value={formData.rentalTimeIn || ""}
           onChange={handleInputChange}
           className="w-full p-2 border rounded-lg mb-4"
         />
-        <label className="block mb-2 font-semibold">Rental Date Out</label>
+        <label className="block mb-2 font-semibold">Rental Time Out</label>
         <input
           type="date"
           name="rentalDateOut"
-          value={formData.rentalDateOut || ""}
+          value={formData.rentalTimeOut || ""}
           onChange={handleInputChange}
           className="w-full p-2 border rounded-lg mb-4"
         />

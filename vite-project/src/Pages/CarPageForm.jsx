@@ -8,15 +8,16 @@ const CarPageForm = () => {
   const [color, setColor] = useState("");
   const [mileage, setMileage] = useState("");
   const [fuel, setFuel] = useState("");
-  const [engine, setEngine] = useState("");
   const [seats, setSeats] = useState("");
   const [doors, setDoors] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [rental, setRental] = useState(false);
-  const [rentalDateIn, setRentalDateIn] = useState("");
-  const [rentalDateOut, setRentalDateOut] = useState("");
+  const [rentalTimeIn, setRentalTimeIn] = useState("");
+  const [rentalTimeOut, setRentalTimeOut] = useState("");
+  const [rentalDateIn, setRentalTDateIn] = useState("");
+  const [rentalDateOut, setRentalTDateOut] = useState("");
   const [rentalPrice, setRentalPrice] = useState("");
 
   function inputHeader(text) {
@@ -72,6 +73,8 @@ const CarPageForm = () => {
       description,
       image,
       rental,
+      rentalTimeIn,
+      rentalTimeOut,
       rentalDateIn,
       rentalDateOut,
       rentalPrice,
@@ -216,25 +219,25 @@ const CarPageForm = () => {
           />
 
           {preInput(
-            "Rental Date In and Rental Date Out times",
-            "Rental Date In and Rental Date Out times"
+            "Rental Time In and Rental Time Out times",
+            "Rental Time In and Rental Time Out times"
           )}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-1/2">
             <div>
-              <h3 className="mt-2 -mb-1">Rental Date In Time:</h3>
+              <h3 className="mt-2 -mb-1">Rental In Time:</h3>
               <input
                 type="text"
-                value={rentalDateIn}
-                onChange={(ev) => setRentalDateIn(ev.target.value)}
+                value={rentalTimeIn}
+                onChange={(ev) => setRentalTimeIn(ev.target.value)}
                 placeholder="16:00h"
               />
             </div>
             <div>
-              <h3 className="mt-2 -mb-1 inline-flex">Rental Date Out Time:</h3>
+              <h3 className="mt-2 -mb-1 inline-flex">Rental Out Time:</h3>
               <input
                 type="text"
-                value={rentalDateOut}
-                onChange={(ev) => setRentalDateOut(ev.target.value)}
+                value={rentalTimeOut}
+                onChange={(ev) => setRentalTimeOut(ev.target.value)}
               />
             </div>
             <div>
