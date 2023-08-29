@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  @apply w-full border my-1 py-2 px-3 rounded-2xl;
+}
+textarea {
+  @apply w-1/2 h-44 border my-1 py-2 px-3 rounded-2xl;
+}
+button {
+  @apply bg-gray-300;
+}
+button.primary {
+  background-color: #f5385d;
+  @apply p-2 w-1/2 text-white rounded-full;
+}
