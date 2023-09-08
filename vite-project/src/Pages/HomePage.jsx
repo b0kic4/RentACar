@@ -47,18 +47,18 @@ export default function HomePage() {
                   />
                 )}
               </div>
-              <h2 className="font-bold text-xl">{car.brand}</h2>
-              <h3 className="text-md text-gray-800 font-semibold">
+              <h2 className="font-bold text-xl flex">{car.brand}</h2>
+              <h3 className="text-md text-gray-800 font-semibold un un:hover">
                 {car.model}
               </h3>
               <div className="mt-1">
-                <span className="font-bold text-lg">
+                <span className="font-bold text-lg un un:hover">
                   ${car.price} Price of the car
                 </span>
               </div>
               <div className="mt-1">
                 {car.rental && (
-                  <span className="font-bold text-lg">
+                  <span className="font-bold text-lg un un:hover">
                     ${car.rentalPrice} per day
                   </span>
                 )}

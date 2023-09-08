@@ -167,26 +167,6 @@ function CarDetailsPage() {
                 </button>
               )}
               <div className="pt-2 gap-2">
-                {/* <p className="font-semibold text-2xl gap-2">
-                  Full price: {carDetails.rentalPricePerDay}
-                </p>
-                <p className="font-semibold text-2xl flex">
-                  Number of days: {carDetails.rentalDays}{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </p> */}
                 {carDetails.rentalPricePerDay && carDetails.rentalDays > 0 && (
                   <div>
                     <p className="font-bold gap-2 flex justify-between text-xl">
