@@ -23,7 +23,7 @@ const carSchema = new Schema({
   rentalDays: { type: String },
   rentalPricePerDay: { type: String },
   rentedBy: { type: String },
-  booked: { type: Boolean },
+  booked: { type: Boolean, default: false },
 });
 
 const carModel = mongoose.model("Car", carSchema);

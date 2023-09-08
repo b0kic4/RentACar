@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+body {
   margin: 0;
   padding: 0;
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  height: 100vh;
+  width: 100vh;
 }
 
 .btn {
