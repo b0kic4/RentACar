@@ -97,7 +97,6 @@ function CarDetailsPage() {
           <h1 className="text-3xl font-bold mb-4">{carDetails.brand}</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              {/* Map through the image filenames and display each image */}
               {carDetails.images.map((imageFilename) => (
                 <img
                   key={imageFilename}
@@ -111,7 +110,6 @@ function CarDetailsPage() {
               <p className="text-gray-600 mb-4 font-semibold">
                 {carDetails.description}
               </p>
-              {/* Display other car details here */}
               <p className="font-semibold text-lg mb-1">
                 Model: {carDetails.model}
               </p>
@@ -127,15 +125,23 @@ function CarDetailsPage() {
               <p className="font-bold text-lg mt-2">Rent Options:</p>
               {showRentOptions ? (
                 <div>
-                  <label htmlFor="checkInDate">Check In Date</label>
+                  <label
+                    htmlFor="checkInDate"
+                    className="font-semibold text-lg mb-1 border-t"
+                  >
+                    Check In Date
+                  </label>
                   <input
                     type="date"
                     id="checkInDate"
                     value={checkIn}
                     onChange={handleCheckInChange}
-                    className="block mt-1 w-full"
+                    className="block mt-1 font-semibold text-md mb-1"
                   />
-                  <label htmlFor="checkOutDate" className="mt-4">
+                  <label
+                    htmlFor="checkOutDate"
+                    className="mt-4 font-semibold text-lg mb-1"
+                  >
                     Check Out Date
                   </label>
                   <input
@@ -143,7 +149,7 @@ function CarDetailsPage() {
                     id="checkOutDate"
                     value={checkOut}
                     onChange={handleCheckOutChange}
-                    className="block mt-1 w-full"
+                    className="block mt-1 font-semibold text-md mb-1 border-b"
                   />
                   <button
                     onClick={rentIt}
