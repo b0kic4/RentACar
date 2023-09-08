@@ -103,6 +103,7 @@ const CarPageForm = () => {
             onChange={(ev) => setBrand(ev.target.value)}
             placeholder="Tesla"
             name="images"
+            className="bg-slate-100"
             required
           />
 
@@ -112,6 +113,7 @@ const CarPageForm = () => {
             value={model}
             onChange={(ev) => setModel(ev.target.value)}
             placeholder="Model, for example: Y"
+            className="bg-slate-100"
             required
           />
           <div>
@@ -158,6 +160,7 @@ const CarPageForm = () => {
               value={description}
               onChange={(ev) => setDescription(ev.target.value)}
               placeholder="Description for your car"
+              className="bg-slate-100"
               required
             />
           </div>
@@ -167,6 +170,7 @@ const CarPageForm = () => {
             value={mileage}
             onChange={(ev) => setMileage(ev.target.value)}
             placeholder="Mileage, for example: 190000km"
+            className="bg-slate-100"
             required
           />
           {preInput("Color", "Which Color Is Your Car Painted In")}
@@ -175,6 +179,7 @@ const CarPageForm = () => {
             value={color}
             onChange={(ev) => setColor(ev.target.value)}
             placeholder="Color, White, Green, Blue, or Black ..."
+            className="bg-slate-100"
             required
           />
           {preInput("Year", "In Which Year Have Your Car Been Created")}
@@ -183,6 +188,7 @@ const CarPageForm = () => {
             value={year}
             onChange={(ev) => setYear(ev.target.value)}
             placeholder="2023"
+            className="bg-slate-100"
             required
           />
           {preInput("Fuel", "Diesel fuel Bensein fuel Electric")}
@@ -191,6 +197,7 @@ const CarPageForm = () => {
             value={fuel}
             onChange={(ev) => setFuel(ev.target.value)}
             placeholder="Fuel, for example: Diesel"
+            className="bg-slate-100"
             required
           />
 
@@ -200,6 +207,7 @@ const CarPageForm = () => {
             value={seats}
             onChange={(ev) => setSeats(ev.target.value)}
             placeholder="Seats, for example: 4"
+            className="bg-slate-100"
             required
           />
           {preInput("Doors", "How many doors is it coupe, suv, limuzine")}
@@ -208,6 +216,7 @@ const CarPageForm = () => {
             value={doors}
             onChange={(ev) => setDoors(ev.target.value)}
             placeholder="Doors, for example: 2"
+            className="bg-slate-100"
             required
           />
           {preInput("Full Price", "How much you value this car")}
@@ -216,6 +225,7 @@ const CarPageForm = () => {
             value={price}
             onChange={(ev) => setPrice(ev.target.value)}
             placeholder="Price, for example: 20 000$"
+            className="bg-slate-100"
             required
           />
 
@@ -230,6 +240,7 @@ const CarPageForm = () => {
                 type="text"
                 value={rentalTimeIn}
                 onChange={(ev) => setRentalTimeIn(ev.target.value)}
+                className="bg-slate-100"
                 placeholder="16:00h"
               />
             </div>
@@ -239,6 +250,7 @@ const CarPageForm = () => {
                 type="text"
                 value={rentalTimeOut}
                 onChange={(ev) => setRentalTimeOut(ev.target.value)}
+                className="bg-slate-100"
               />
             </div>
             <div>
@@ -247,6 +259,7 @@ const CarPageForm = () => {
                 type="number"
                 value={rentalPrice}
                 onChange={(ev) => setRentalPrice(ev.target.value)}
+                className="bg-slate-100"
               />
             </div>
             <div className="font-semibold">
@@ -259,6 +272,7 @@ const CarPageForm = () => {
                     value="yes"
                     checked={rental === "yes"}
                     onChange={(ev) => setRental(ev.target.value)}
+                    className="bg-slate-100"
                   />
                   Yes
                 </label>
@@ -269,13 +283,14 @@ const CarPageForm = () => {
                     value="no"
                     checked={rental === "no"}
                     onChange={(ev) => setRental(ev.target.value)}
+                    className="bg-slate-100"
                   />
                   No
                 </label>
               </div>
             </div>
           </div>
-          <div className="mt-12 flex justify-center">
+          <div className="mb-12 flex justify-center">
             <button type="submit" className="primary w-1/2">
               Save
             </button>
