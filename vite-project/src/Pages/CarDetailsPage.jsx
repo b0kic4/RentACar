@@ -8,7 +8,7 @@ function CarDetailsPage() {
   const [showRentOptions, setShowRentOptions] = useState(false);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
-  const [rentPrice, setRentPrice] = useState("");
+  const [rentalPricePerDay, setRentalPricePerDay] = useState(0);
 
   useEffect(() => {
     axios
@@ -33,7 +33,7 @@ function CarDetailsPage() {
     setCheckOut(e.target.value);
   };
 
-  const rentIt = () => {
+  async function rentIt() {
     if (!checkIn || !checkOut) {
       console.error("Both check-in and check-out dates are required.");
       return;
@@ -41,10 +41,11 @@ function CarDetailsPage() {
     const numberOfDays = calculateNumberOfDays(checkIn, checkOut);
     const totalPrice = numberOfDays * carDetails.rentalPrice;
 
-    axios
+    await axios
       .put(`/cars/${id}/rent`, {
         rentalDateIn: checkIn,
         rentalDateOut: checkOut,
+        rentalPricePerDay: totalPrice,
       })
       .then((response) => {
         console.log(response);
@@ -54,13 +55,13 @@ function CarDetailsPage() {
           rentalDateIn: checkIn,
           rentalDateOut: checkOut,
           rentalDays: numberOfDays,
-          rentalPrice: totalPrice,
+          rentalPricePerDay: totalPrice,
         }));
       })
       .catch((error) => {
         console.error("Error renting car:", error);
       });
-  };
+  }
 
   const cancelRent = () => {
     axios
@@ -73,7 +74,7 @@ function CarDetailsPage() {
           rentalDateIn: null,
           rentalDateOut: null,
           rentalDays: null,
-          rentalPrice: null,
+          rentalPricePerDay: null,
         }));
       })
       .catch((error) => {
@@ -123,8 +124,6 @@ function CarDetailsPage() {
               <p className="font-semibold text-lg mb-1">
                 Mileage: {carDetails.mileage} km
               </p>
-              {/* ... other car details ... */}
-              {/* Rent It button */}
               <p className="font-bold text-lg mt-2">Rent Options:</p>
               {showRentOptions ? (
                 <div>
@@ -165,14 +164,11 @@ function CarDetailsPage() {
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-7 py-2 px-3 rounded flex gap-2 justify-center text-center"
                 >
                   Rent It
-                  {/* ... (existing SVG) */}
                 </button>
               )}
             </div>
-            <p>Rental Date In: {carDetails.rentalDateIn}</p>
-            <p>Rental Date Out: {carDetails.rentalDateOut}</p>
-            <p>Rental Date In: {checkIn}</p>
-            <p>Rental Date Out: {checkOut}</p>
+            <p>Full price {carDetails.rentalPricePerDay}</p>
+            <p>Number of days {carDetails.rentalDays}</p>
           </div>
         </div>
       )}

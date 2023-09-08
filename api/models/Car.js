@@ -21,6 +21,7 @@ const carSchema = new Schema({
   rentalDateIn: { type: String },
   rentalDateOut: { type: String },
   rentalDays: { type: String },
+  rentalPricePerDay: { type: String },
   rentedBy: { type: String },
   booked: { type: Boolean },
 });

@@ -149,6 +149,7 @@ app.post("/cars", (req, res) => {
     rentalDateIn,
     rentalDateOut,
     rentalPrice,
+    rentalPricePerDay,
     booked,
   } = req.body;
 
@@ -169,6 +170,7 @@ app.post("/cars", (req, res) => {
       rentalDateIn,
       rentalDateOut,
       rentalPrice,
+      rentalPricePerDay,
       doors,
       seats,
       mileage,
@@ -199,6 +201,7 @@ app.put("/cars/:id", async (req, res) => {
     rentalDateIn,
     rentalDateOut,
     rentalPrice,
+    rentalPricePerDay,
     doors,
     seats,
     mileage,
@@ -236,6 +239,7 @@ app.put("/cars/:id", async (req, res) => {
         rentalDateIn,
         rentalDateOut,
         rentalPrice,
+        rentalPricePerDay,
         doors,
         seats,
         mileage,
@@ -313,7 +317,7 @@ app.put("/cars/:id/rent", async (req, res) => {
         car.rentalDateIn &&
         car.rentalDateOut &&
         req.body.rentalDays &&
-        req.body.rentalPrice
+        req.body.rentalPricePerDay
       ) {
         return res.status(400).json({ message: "Car is already booked" });
       }
@@ -322,7 +326,7 @@ app.put("/cars/:id/rent", async (req, res) => {
       car.rentalDateIn = req.body.rentalDateIn;
       car.rentalDateOut = req.body.rentalDateOut;
       car.rentalDays = req.body.rentalDays;
-      car.rentalPrice = req.body.rentalPrice; // Make sure to set rentalPrice too
+      car.rentalPricePerDay = req.body.rentalPricePerDay;
       await car.save();
       res.json({ message: "Car successfully booked" });
     } catch (error) {
@@ -350,6 +354,7 @@ app.put("/cars/:id/rent/cancel", async (req, res) => {
       car.rentedBy = null;
       car.rentalDateIn = null;
       car.rentalDateOut = null;
+      car.rentalPricePerDay = null;
       await car.save();
       res.json({ message: "Car rent successfully canceled" });
     } catch (error) {

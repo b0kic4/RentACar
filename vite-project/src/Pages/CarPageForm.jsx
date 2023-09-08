@@ -78,6 +78,7 @@ const CarPageForm = () => {
       rentalDateIn,
       rentalDateOut,
       rentalPrice,
+      rentalPricePerDay,
     };
     try {
       const response = await axios.post("/cars", carData);
