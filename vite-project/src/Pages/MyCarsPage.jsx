@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
-import { useNavigate } from "react-router-dom";
 
 export default function MyCarsPage() {
   const [cars, setCars] = useState([]);
@@ -31,7 +30,6 @@ export default function MyCarsPage() {
       .delete(`/cars/${id}`)
       .then((response) => {
         console.log(response);
-        navigate(`/my-cars`);
       })
       .catch((error) => {
         console.error("Error deleting car:", error);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const CarPageForm = () => {
+  const navigate = useNavigate();
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
   const [year, setYear] = useState("");
@@ -78,12 +79,11 @@ const CarPageForm = () => {
       rentalDateIn,
       rentalDateOut,
       rentalPrice,
-      rentalPricePerDay,
-      bookingInformation,
     };
     try {
       const response = await axios.post("/cars", carData);
       console.log("Car created", response.data);
+      navigate("/my-cars");
     } catch (err) {
       console.log("Error creating the car" + err);
     }

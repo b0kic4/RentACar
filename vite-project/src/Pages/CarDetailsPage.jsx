@@ -171,6 +171,16 @@ function CarDetailsPage() {
                       Rent It
                     </button>
                   )}
+                  {carDetails.booked === true && (
+                    <div>
+                      <button
+                        onClick={cancelRent}
+                        className="bg-red-500 hover:bg-red-800 text-black hover:text-gray-300 font-bold mt-4 py-2 px-3 rounded ml-4"
+                      >
+                        Cancel Rent
+                      </button>
+                    </div>
+                  )}
                   <div className="pt-8 gap-2">
                     {carDetails.rentalPricePerDay &&
                       carDetails.rentalDays > 0 &&
@@ -310,16 +320,6 @@ function CarDetailsPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-            {carDetails.booked === true && (
-              <div>
-                <button
-                  onClick={cancelRent}
-                  className="bg-red-500 hover:bg-red-800 text-black hover:text-gray-300 font-bold mt-4 py-2 px-3 rounded ml-4"
-                >
-                  Cancel Rent
-                </button>
               </div>
             )}
           </div>

@@ -5,7 +5,6 @@ function CarImages({ images }) {
   if (!Array.isArray(images)) {
     return null; // Or you can return some default content or a loading indicator
   }
-
   return (
     <div>
       {images.map((imageFilename) => (
