@@ -151,6 +151,7 @@ app.post("/cars", (req, res) => {
     rentalPrice,
     rentalPricePerDay,
     booked,
+    bookingInformation,
   } = req.body;
 
   jwt.verify(token, jwtSecret, {}, async (err, carData) => {
@@ -177,6 +178,7 @@ app.post("/cars", (req, res) => {
       year,
       brand,
       booked,
+      bookingInformation,
     });
     res.json(carDoc);
     console.log(carDoc);
@@ -207,6 +209,7 @@ app.put("/cars/:id", async (req, res) => {
     mileage,
     year,
     booked,
+    bookingInformation,
   } = req.body;
 
   try {
@@ -246,6 +249,7 @@ app.put("/cars/:id", async (req, res) => {
         year,
         images: image,
         booked,
+        bookingInformation,
       });
 
       await carDoc.save();
@@ -317,7 +321,8 @@ app.put("/cars/:id/rent", async (req, res) => {
         car.rentalDateIn &&
         car.rentalDateOut &&
         req.body.rentalDays &&
-        req.body.rentalPricePerDay
+        req.body.rentalPricePerDay &&
+        req.body.bookingInformation
       ) {
         return res.status(400).json({ message: "Car is already booked" });
       }
@@ -327,6 +332,8 @@ app.put("/cars/:id/rent", async (req, res) => {
       car.rentalDateOut = req.body.rentalDateOut;
       car.rentalDays = req.body.rentalDays;
       car.rentalPricePerDay = req.body.rentalPricePerDay;
+      car.bookingInformation = req.body.bookingInformation;
+      console.log("Booking Information received:", req.body.rentalDays);
       await car.save();
       res.json({ message: "Car successfully booked" });
     } catch (error) {
@@ -355,6 +362,7 @@ app.put("/cars/:id/rent/cancel", async (req, res) => {
       car.rentalDateIn = null;
       car.rentalDateOut = null;
       car.rentalPricePerDay = null;
+      car.bookingInformation = null;
       await car.save();
       res.json({ message: "Car rent successfully canceled" });
     } catch (error) {

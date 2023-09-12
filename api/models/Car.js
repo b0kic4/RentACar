@@ -24,6 +24,7 @@ const carSchema = new Schema({
   rentalPricePerDay: { type: String },
   rentedBy: { type: String },
   booked: { type: Boolean, default: false },
+  bookingInformation: [{ type: String }],
 });
 
 const carModel = mongoose.model("Car", carSchema);
