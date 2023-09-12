@@ -163,6 +163,24 @@ function CarDetailsPage() {
                   <p className="font-semibold text-lg mb-1">
                     Mileage: {carDetails.mileage} km
                   </p>
+                  {!showRentOptions && carDetails.booked === false && (
+                    <button
+                      onClick={toggleRentOptions}
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-7 py-2 px-3 rounded flex gap-2 justify-center text-center"
+                    >
+                      Rent It
+                    </button>
+                  )}
+                  {carDetails.booked === true && (
+                    <div>
+                      <button
+                        onClick={cancelRent}
+                        className="bg-red-500 hover:bg-red-800 text-black hover:text-gray-300 font-bold mt-4 py-2 px-3 rounded ml-4"
+                      >
+                        Cancel Rent
+                      </button>
+                    </div>
+                  )}
                   <div className="pt-8 gap-2">
                     {carDetails.rentalPricePerDay &&
                       carDetails.rentalDays > 0 &&
@@ -255,7 +273,7 @@ function CarDetailsPage() {
                           placeholder="Full Name"
                         />
                         <input
-                          type="text"
+                          type="number"
                           name="age"
                           onChange={handleChange}
                           placeholder="age"
@@ -303,24 +321,6 @@ function CarDetailsPage() {
                   </div>
                 </div>
               </div>
-            )}
-            {carDetails.booked === true && (
-              <div>
-                <button
-                  onClick={cancelRent}
-                  className="bg-red-500 hover:bg-red-800 text-black hover:text-gray-300 font-bold mt-4 py-2 px-3 rounded ml-4"
-                >
-                  Cancel Rent
-                </button>
-              </div>
-            )}
-            {!showRentOptions && carDetails.booked === false && (
-              <button
-                onClick={toggleRentOptions}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-7 py-2 px-3 rounded flex gap-2 justify-center text-center"
-              >
-                Rent It
-              </button>
             )}
           </div>
         </div>
