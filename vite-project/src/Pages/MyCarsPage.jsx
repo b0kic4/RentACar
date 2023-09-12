@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function MyCarsPage() {
   const [cars, setCars] = useState([]);
