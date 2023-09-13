@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
 
@@ -53,8 +52,10 @@ export default function MyCarsPage() {
                 />
               )}
             </div>
-            <h2 className="font-bold text-xl un un:hover">{car.brand}</h2>
-            <h3 className="text-md text-gray-800 font-semibold">{car.model}</h3>
+            <h2 className="font-bold text-white text-xl un un:hover">
+              {car.brand}
+            </h2>
+            <h3 className="text-md text-white font-semibold">{car.model}</h3>
             <div className="mt-1">
               <span className="font-bold text-lg un un:hover">
                 ${car.price} Price of the car

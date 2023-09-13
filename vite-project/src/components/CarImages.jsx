@@ -6,13 +6,13 @@ function CarImages({ images }) {
     return null; // Or you can return some default content or a loading indicator
   }
   return (
-    <div>
+    <div className="h-fit w-fit">
       {images.map((imageFilename) => (
         <img
           key={imageFilename}
           src={`http://localhost:4000/uploads/${imageFilename}`}
           alt={imageFilename}
-          className="w-full rounded-lg mb-4"
+          className="w-screen h-80 object-cover rounded-lg mb-4"
         />
       ))}
     </div>

@@ -11,7 +11,7 @@ export default function SearchBar({ value, onChange, onSearch }) {
         <input
           type="search"
           placeholder="Search"
-          className="search bg-gray-200"
+          className="search bg-gray-50 text-center"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />

@@ -30,7 +30,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="mt-8 gap-6 px-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="mt-8 gap-6 mx-64 w-fit grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 translate-x-28">
       {filteredMyCars.length > 0 ? (
         filteredMyCars.map((car) => (
           <div key={car._id}>
@@ -41,14 +41,14 @@ export default function HomePage() {
               >
                 {car.images?.length > 0 && (
                   <img
-                    className="rounded-2xl object-cover aspect-square ease-in-out transition duration-300 hover:scale-110"
+                    className="rounded-2xl object-cover aspect-square ease-in-out transition duration-300 opacity-90 hover:opacity-100 hover:scale-110"
                     src={baseUrl + car.images[0]}
                     alt={car.model}
                   />
                 )}
               </div>
               <h2 className="font-bold text-xl flex">{car.brand}</h2>
-              <h3 className="text-md text-gray-800 font-semibold un un:hover">
+              <h3 className="text-md text-white font-semibold un un:hover">
                 {car.model}
               </h3>
               <div className="mt-1">

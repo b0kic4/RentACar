@@ -1,0 +1,14 @@
+.multiple-background-images {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* Overlay or filter if desired */
+      url("/src/images/photos/2010.i123.005..car headlights AD composition.jpg");
+  background-size: cover; /* Adjust background size as needed (cover, contain, auto, etc.) */
+  background-position: center center; /* Adjust background position (center, top, left, etc.) */
+  background-repeat: no-repeat; /* No image repetition */
+  height: 400px; /* Set the height as per your design */
+  /* Add any other styles you want for the element */
+  color: white; /* Text color on the background images */
+  text-align: center; /* Center text horizontally */
+  padding: 70px; /* Add padding to the element */
+  opacity: 0.97;
+}

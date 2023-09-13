@@ -12,15 +12,17 @@ function RentOptions({
   cancelRent,
 }) {
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-6 items-center">
       {" "}
-      <div className="flex gap-6">
+      <div className="flex gap-6 justify-center items-center">
         <div>
-          <p className="font-bold text-lg mt-2">Rent Options:</p>
-          <div>
+          <p className="font-bold text-black flex w text-lg mt-2">
+            Rent Options:
+          </p>
+          <div className="block">
             <label
               htmlFor="checkInDate"
-              className="font-semibold text-lg mb-1 border-t"
+              className="font-semibold flex text-black text-lg mb-1 border-t w-fit"
             >
               Check In Date
             </label>
@@ -29,11 +31,11 @@ function RentOptions({
               id="checkInDate"
               value={checkIn}
               onChange={handleCheckInChange}
-              className="block mt-1 font-semibold text-md mb-1"
+              className="block mt-1 text-black font-semibold text-md mb-1"
             />
             <label
               htmlFor="checkOutDate"
-              className="mt-4 font-semibold text-lg mb-1"
+              className="mt-4 font-semibold flex text-black text-lg mb-1"
             >
               Check Out Date
             </label>
@@ -42,7 +44,7 @@ function RentOptions({
               id="checkOutDate"
               value={checkOut}
               onChange={handleCheckOutChange}
-              className="block mt-1 font-semibold text-md mb-1 border-b"
+              className="block mt-1 font-semibold text-black text-md mb-1 border-b"
             />
           </div>
           <div className="block m-0 p-0">

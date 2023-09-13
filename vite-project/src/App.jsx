@@ -11,11 +11,12 @@ import CarPageForm from "./Pages/CarPageForm";
 import CarDetailsPage from "./Pages/CarDetailsPage";
 import MyCarsPage from "./Pages/MyCarsPage";
 import EditCarPage from "./Pages/EditCarPage";
+
 function App() {
   axios.defaults.baseURL = "http://localhost:4000";
   axios.defaults.withCredentials = true;
   return (
-    <div className="bg-gray-200 w-screen h-screen">
+    <div className="bg-gray-50 w-screen h-screen multiple-background-images">
       <UserContextProvider>
         <Routes>
           <Route path="/" element={<Layout />}>

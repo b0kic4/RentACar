@@ -1,0 +1,26 @@
+.nav {
+  /* Specify the background image URL */
+  background-image: url("/src/images/photos/pexels-pixabay-63294.jpg");
+
+  /* Set background size to cover (stretches to cover the entire container) */
+  background-size: cover;
+
+  /* Set background repeat to no-repeat (to avoid repeating the image) */
+  background-repeat: no-repeat;
+
+  /* Set background position to center (centers the image horizontally and vertically) */
+  background-position: center center;
+
+  /* Set a fixed height for the header (adjust as needed) */
+  height: 100px; /* Adjust the height as needed */
+
+  /* If you want to make the background semi-transparent, you can use rgba for the background color */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha (last value) for transparency */
+
+  /* Add any other styles you want for your header here */
+}

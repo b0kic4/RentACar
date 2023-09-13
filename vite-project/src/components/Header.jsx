@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../UserContext";
 import "./css/SearchBar.css";
 import SearchBar from "./SearchBar";
+import "./css/Header.css";
 
 export default function Header() {
   const { setUser, user } = useContext(UserContext);
@@ -39,10 +40,10 @@ export default function Header() {
   };
 
   return (
-    <nav className="flex justify-between px-20 py-8 items-center shadow-md">
+    <nav className="flex justify-between px-20 py-8 items-center shadow-md nav rounded-xl">
       <div>
         <Link to={"/"}>
-          <span className="font-bold text-xl flex gap-2 justify-center items-center hover:text-red-800 cursor-pointer">
+          <span className="flex gap-1 items-center font-bold bg-gray-50 bg-opacity-40 hover:bg-slate-50 hover:bg-opacity-80 hover:text-gray-800 text-xl cursor-pointer text-black py-2 px-3 rounded-full">
             RentIT
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +71,7 @@ export default function Header() {
           {username && (
             <div className="inline-flex gap-4 justify-center items-center">
               <Link to={"/my-cars"}>
-                <span className="flex gap-1 items-center font-bold hover:bg-slate-300 hover:text-gray-800 text-xl cursor-pointer text-black py-2 px-3 rounded-full">
+                <span className="flex gap-1 items-center font-bold bg-gray-50 bg-opacity-40 hover:bg-slate-50 hover:bg-opacity-80 hover:text-gray-800 text-xl cursor-pointer text-black py-2 px-3 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -87,7 +88,7 @@ export default function Header() {
                 </span>
               </Link>
               <Link to={"/new"}>
-                <span className="flex gap-1 items-center font-bold hover:bg-slate-300 hover:text-gray-800 text-xl cursor-pointer text-black py-2 px-3 rounded-full">
+                <span className="flex gap-1 items-center font-bold bg-slate-50 bg-opacity-40 hover:bg-slate-50 hover:bg-opacity-80 hover:text-gray-800 text-xl cursor-pointer text-black py-2 px-3 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -104,7 +105,7 @@ export default function Header() {
                 </span>
               </Link>
               <Link to={"/profile"}>
-                <span className="flex gap-1 items-center font-bold hover:bg-gray-800 hover:text-white text-xl cursor-pointer text-black py-2 px-3 rounded-full">
+                <span className="flex gap-1 items-center font-bold bg-slate-50 bg-opacity-40 hover:bg-slate-50 hover:bg-opacity-80 hover:text-black text-xl cursor-pointer text-black py-2 px-3 rounded-full">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -117,8 +118,9 @@ export default function Header() {
                       clipRule="evenodd"
                     />
                   </svg>
-
-                  <span>{username}</span>
+                  <span>
+                    <h1>{username}</h1>
+                  </span>
                 </span>
               </Link>
               <button
