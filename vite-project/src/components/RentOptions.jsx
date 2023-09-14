@@ -22,7 +22,7 @@ function RentOptions({
           <div className="block">
             <label
               htmlFor="checkInDate"
-              className="font-semibold flex text-black text-lg mb-1 border-t w-fit"
+              className="font-semibold flex text-black text-lg mb-1 border-t border-black w-fit"
             >
               Check In Date
             </label>
@@ -31,7 +31,7 @@ function RentOptions({
               id="checkInDate"
               value={checkIn}
               onChange={handleCheckInChange}
-              className="block mt-1 text-black font-semibold text-md mb-1"
+              className="block mt-1 text-black font-semibold text-md mb-1 bg-transparent"
             />
             <label
               htmlFor="checkOutDate"
@@ -44,7 +44,7 @@ function RentOptions({
               id="checkOutDate"
               value={checkOut}
               onChange={handleCheckOutChange}
-              className="block mt-1 font-semibold text-black text-md mb-1 border-b"
+              className="block mt-1 font-semibold text-black text-md mb-1 border-black border-b bg-transparent"
             />
           </div>
           <div className="block m-0 p-0">
@@ -55,36 +55,42 @@ function RentOptions({
                   name="name"
                   onChange={handleChange}
                   placeholder="Full Name"
+                  className="text-black"
                 />
                 <input
                   type="number"
                   name="age"
                   onChange={handleChange}
                   placeholder="age"
+                  className="text-black"
                 />
                 <input
                   type="text"
                   name="address"
                   onChange={handleChange}
                   placeholder="address"
+                  className="text-black"
                 />
                 <input
                   type="text"
                   name="city"
                   onChange={handleChange}
                   placeholder="city"
+                  className="text-black"
                 />
                 <input
                   type="text"
                   name="zipcode"
                   onChange={handleChange}
                   placeholder="zipcode"
+                  className="text-black"
                 />
                 <input
                   type="text"
                   name="indetificaitonID"
                   onChange={handleChange}
                   placeholder="Indetificaiton ID"
+                  className="text-black"
                 />
               </form>
             </div>

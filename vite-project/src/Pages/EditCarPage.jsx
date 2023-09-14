@@ -109,7 +109,7 @@ function EditCarPage() {
           name="brand"
           value={formData.brand || ""}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-lg mb-4"
+          className="w-full p-2 border rounded-lg mb-4 text-black"
         />
         <label className="block mb-2 font-semibold">Model</label>
         <input
@@ -117,7 +117,7 @@ function EditCarPage() {
           name="model"
           value={formData.model || ""}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-lg mb-4"
+          className="w-full p-2 border rounded-lg mb-4 text-black"
         />
         <label className="block mb-2 font-semibold">Year</label>
         <input
@@ -125,7 +125,7 @@ function EditCarPage() {
           name="year"
           value={formData.year || ""}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-lg mb-4"
+          className="w-full p-2 border rounded-lg mb-4 text-black"
         />
         <label className="block mb-2 font-semibold">Color</label>
         <input
@@ -133,7 +133,7 @@ function EditCarPage() {
           name="Color"
           value={formData.color || ""}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-lg mb-4"
+          className="w-full p-2 border rounded-lg mb-4 text-black"
         />
         <label className="block mb-2 font-semibold">Price</label>
         <input
@@ -141,7 +141,7 @@ function EditCarPage() {
           name="price"
           value={formData.price || ""}
           onChange={handleInputChange}
-          className="w-full p-2 border rounded-lg mb-4"
+          className="w-full p-2 border rounded-lg mb-4 text-black"
         />
 
         <div>

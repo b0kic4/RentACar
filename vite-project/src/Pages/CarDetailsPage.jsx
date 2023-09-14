@@ -131,7 +131,7 @@ function CarDetailsPage() {
   }
 
   return (
-    <div className="container mx-auto py-4 px-2 border">
+    <div className="container mx-auto py-4 px-2">
       {carDetails && (
         <div className="bg-gray-600 bg-opacity-50 border max-h-fit bg-cover object-cover overflow-hidden text-opacity-100 rounded-lg shadow-md p-4 flex">
           <div className="flex-1">
