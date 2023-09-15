@@ -97,7 +97,7 @@ const CarPageForm = () => {
           onSubmit={saveCarForm}
           method="post"
           encType="multipart/form-data"
-          className="border"
+          className="border border-opacity-10"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
             {/* Left Side */}
@@ -111,7 +111,7 @@ const CarPageForm = () => {
                   onChange={(ev) => setBrand(ev.target.value)}
                   placeholder="Brand of your car"
                   name="images"
-                  className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-400"
+                  className="w-full px-3 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
                   required
                 />
               </div>
@@ -212,7 +212,6 @@ const CarPageForm = () => {
                   </div>
                 )}
               </div>
-
               {/* Description */}
               <div>
                 <textarea

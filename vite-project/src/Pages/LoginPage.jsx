@@ -34,7 +34,7 @@ export default function LoginPage() {
               <label>username</label>
               <input
                 type="text"
-                className="w-auto md:w-52 sm:w-24 text-center px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                className="w-auto md:w-52 sm:w-24 text-black text-center px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                 placeholder="username"
                 value={username}
                 onChange={(ev) => setUsername(ev.target.value)}
@@ -44,7 +44,7 @@ export default function LoginPage() {
               <label>Password</label>
               <input
                 type="password"
-                className="w-auto md:w-52 sm:w-24 text-center px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                className="w-auto md:w-52 sm:w-24 text-black text-center px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(ev) => setPassword(ev.target.value)}
