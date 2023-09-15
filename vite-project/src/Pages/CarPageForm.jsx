@@ -90,14 +90,14 @@ const CarPageForm = () => {
   }
 
   return (
-    <div className="container mx-auto p-8 bg-slate-50 bg-opacity-10 rounded-lg shadow-md ">
+    <div className="container mx-auto p-8 bg-slate-50 bg-opacity-10 rounded-lg shadow-md mt-6 ">
       <h2 className="text-2xl font-bold mb-4">Car Details</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <form
           onSubmit={saveCarForm}
           method="post"
           encType="multipart/form-data"
-          className="border border-opacity-10"
+          className="px-6 py-2 border border-opacity-10 text-black border-blue-100"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
             {/* Left Side */}
@@ -153,6 +153,14 @@ const CarPageForm = () => {
                   value={seats}
                   onChange={(ev) => setSeats(ev.target.value)}
                   placeholder="How many seats?"
+                  className="bg-slate-100 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-400"
+                  required
+                />
+                <input
+                  type="text"
+                  value={price}
+                  onChange={(ev) => setPrice(ev.target.value)}
+                  placeholder="How much is your car worth?"
                   className="bg-slate-100 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-400"
                   required
                 />

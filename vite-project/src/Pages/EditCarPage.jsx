@@ -40,27 +40,31 @@ function EditCarPage() {
 
   function handleImageUpload(e) {
     const formData = new FormData();
-    for (let i = 0; i < selectedImages.length; i++) {
-      formData.append("images", selectedImages[i]);
-    }
+    if (!selectedImages.length === 0) {
+      return;
+    } else {
+      for (let i = 0; i < selectedImages.length; i++) {
+        formData.append("images", selectedImages[i]);
+      }
 
-    axios
-      .post("/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
-      .then((response) => {
-        const filenames = response.data;
-        setFormData((prevData) => ({
-          ...prevData,
-          image: filenames,
-        }));
-        setSelectedImages(e.target.files);
-      })
-      .catch((error) => {
-        console.error("Error uploading images:", error);
-      });
+      axios
+        .post("/upload", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          const filenames = response.data;
+          setFormData((prevData) => ({
+            ...prevData,
+            image: filenames,
+          }));
+          setSelectedImages(e.target.files);
+        })
+        .catch((error) => {
+          console.error("Error uploading images:", error);
+        });
+    }
   }
 
   // Handle form submission
@@ -71,7 +75,8 @@ function EditCarPage() {
       .put(`/cars/${id}`, formData)
       .then((response) => {
         console.log(response);
-        navigate.push(`/my-cars`);
+        alert("Car successfully updated");
+        navigate(`/my-cars`);
       })
       .catch((error) => {
         console.error("Error editing car:", error);
@@ -150,7 +155,6 @@ function EditCarPage() {
             type="file"
             name="images"
             multiple
-            required
             onChange={handleImageUpload}
           />
           {formData.image && formData.image.length > 0 && (
